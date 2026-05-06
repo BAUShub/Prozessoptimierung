@@ -158,14 +158,14 @@
             opacity: 1;
         }
         .subPhaseNode.active .subPhaseDot {
-            background: #38d391;
+            background: #EC6A6D;
             opacity: 1;
             transform: scale(1.3);
         }
         .subPhaseNode.active .subPhaseTitle {
-            background: #38d391;
-            color: #111143;
-            border-color: #38d391;
+            background: #EC6A6D;
+            color: #ffffff;
+            border-color: #EC6A6D;
             font-weight: 300;
         }
 
@@ -290,7 +290,7 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: #38d391;
+            background: #EC6A6D;
             opacity: 0.5;
             z-index: 1;
         }
@@ -320,24 +320,26 @@
             background: #ffffff;
             padding: 12px;
             border-radius: 6px;
-            border: 1px solid #38d391;
+            border: 1px solid #EC6A6D;
             box-shadow: 0 1px 3px rgba(17,17,67,0.1);
             display: inline-block;
             width: 100%;
             box-sizing: border-box;
             transition: all 0.3s;
         }
-        .stepNode:hover .stepTitle {
-            background: #38d391;
-            color: #111143;
+        .stepNode:hover .stepTitle,
+        .stepNode.active .stepTitle {
+            background: #EC6A6D;
+            color: #ffffff;
         }
-        .stepNode:hover .stepNumberBadge {
-            color: #111143;
+        .stepNode:hover .stepNumberBadge,
+        .stepNode.active .stepNumberBadge {
+            color: #ffffff;
         }
         .stepNumberBadge {
             display: block;
             font-weight: 400;
-            color: #38d391;
+            color: #EC6A6D;
             margin-bottom: 5px;
             font-size: 0.8em;
             text-transform: uppercase;
@@ -346,14 +348,27 @@
         .stepDot {
             width: 16px;
             height: 16px;
-            background: #38d391;
+            background: #EC6A6D;
             border-radius: 50%;
             border: 3px solid #fff0e9;
             box-sizing: content-box;
             transition: all 0.3s;
         }
-        .stepNode:hover .stepDot {
+        .stepNode:hover .stepDot,
+        .stepNode.active .stepDot {
             transform: scale(1.3);
+        }
+
+        .dokumenteBereich {
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid #e0e0e0;
+        }
+        .dokumenteTitel {
+            font-weight: 300;
+            color: #EC6A6D;
+            margin-bottom: 5px;
+            display: block;
         }
 
         .modalOverlay {
@@ -363,7 +378,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(17, 17, 67, 0.6);
+            background: rgba(255, 240, 233, 0.85);
             backdrop-filter: blur(4px);
             z-index: 1000;
             align-items: center;
