@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Firmenintranet Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fff0e9;
+            --text-main: #111143;
+            --accent-blue: #6969d9;
+            --accent-red: #EC6A6D;
+            --accent-pink: #fc6381;
+            --card-bg: #ffffff;
+            --border-light: #e0e0e0;
+        }
+
+        * {
+            font-family: 'Jost', sans-serif;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body { 
+            background: var(--bg-color); 
+            color: var(--text-main); 
+            line-height: 1.5; 
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            padding-bottom: 60px;
+        }
+
+        .navbar {
+            background: var(--card-bg);
+            padding: 15px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 10px rgba(17,17,67,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar-brand {
+            font-size: 1.5em;
+            font-weight: 500;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .navbar-brand span {
+            color: var(--accent-red);
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero / Manifest Section */
+        .hero {
+            background: linear-gradient(135deg, var(--text-main) 0%, #2a2a6a 100%);
+            color: #fff;
+            border-radius: 16px;
+            padding: 60px 40px;
+            margin-top: 30px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(17,17,67,0.15);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            right: -50px;
+            bottom: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(236,106,109,0.2) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 2.8em;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        .hero p.manifest {
+            font-size: 1.2em;
+            font-weight: 300;
+            max-width: 800px;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.6;
+        }
+
+        /* Quick Actions (Dark Bar) */
+        .quick-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: -30px;
+            position: relative;
+            z-index: 10;
+            flex-wrap: wrap;
+            padding: 0 20px;
+        }
+
+        .action-card {
+            background: var(--text-main);
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 25px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-width: 130px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            border-bottom: 4px solid var(--accent-blue);
+        }
+
+        .action-card:hover {
+            transform: translateY(-5px);
+            background: #1a1a5c;
+            border-color: var(--accent-red);
+        }
+
+        .action-card span.icon {
+            font-size: 1.8em;
+            margin-bottom: 5px;
+        }
+
+        .action-card span.label {
+            font-size: 0.9em;
+            font-weight: 400;
+        }
+
+        /* Main Grid Layout */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2.5fr 1fr;
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 1024px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .section-title {
+            font-size: 1.6em;
+            font-weight: 500;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 5px;
+            height: 25px;
+            background: var(--accent-red);
+            border-radius: 3px;
+        }
+
+        /* News Cards */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .news-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(17,17,67,0.06);
+            transition: transform 0.3s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(17,17,67,0.12);
+        }
+
+        .news-image {
+            height: 180px;
+            background-color: var(--border-light);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .news-content {
+            padding: 20px;
+        }
+
+        .news-tag {
+            background: rgba(105, 105, 217, 0.1);
+            color: var(--accent-blue);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75em;
+            font-weight: 500;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .news-card h3 {
+            font-size: 1.2em;
+            font-weight: 400;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .news-date {
+            font-size: 0.85em;
+            color: #777;
+        }
+
+        /* Top Resources (Departments) */
+        .resource-section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(17,17,67,0.06);
+            margin-bottom: 30px;
+        }
+
+        .department-block {
+            margin-bottom: 35px;
+        }
+        
+        .department-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .department-header {
+            font-size: 1.2em;
+            font-weight: 500;
+            color: var(--text-main);
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--bg-color);
+            padding-bottom: 5px;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 12px;
+        }
+
+        .resource-tile {
+            background: var(--bg-color);
+            color: var(--text-main);
+            text-decoration: none;
+            padding: 12px 15px;
+            border-radius: 8px;
+            font-size: 0.95em;
+            font-weight: 400;
+            border: 1px solid transparent;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .resource-tile::before {
+            content: '📄';
+            font-size: 1.1em;
+        }
+
+        .resource-tile:hover {
+            background: var(--card-bg);
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+            transform: translateX(3px);
+            box-shadow: 0 2px 5px rgba(17,17,67,0.05);
+        }
+
+        /* Specific tile colors for differentiation */
+        .tile-architektur:hover { border-color: var(--accent-red); color: var(--accent-red); }
+        .tile-bauleitung:hover { border-color: var(--text-main); color: var(--text-main); }
+        .tile-wissen:hover { border-color: var(--accent-pink); color: var(--accent-pink); }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <span>●</span> THE HUB
+        </div>
+    </nav>
+
+    <div class="container">
+        
+        <!-- Hero Section / Manifest -->
+        <div class="hero">
+            <h1>Willkommen in Ihrem Digital HQ!</h1>
+            <p class="manifest">
+                Wir gestalten Lebensräume mit Weitsicht und Präzision. Unsere Architektur verbindet Innovation mit Beständigkeit. Wir pflegen eine offene Kommunikationskultur und unterstützen uns gegenseitig bei der Erreichung unserer Projektziele.
+            </p>
+        </div>
+
+        <!-- Quick Actions Row -->
+        <div class="quick-actions">
+            <a href="#" class="action-card">
+                <span class="icon">👥</span>
+                <span class="label">Personio (HR)</span>
+            </a>
+            <a href="#" class="action-card">
+                <span class="icon">⏱️</span>
+                <span class="label">Zeiterfassung</span>
+            </a>
+            <a href="https://baustehli.sharepoint.com/:u:/r/sites/BAUS_Optimiert/SitePages/BAUS-bibel.aspx?csf=1&web=1&e=parO0f" class="action-card">
+                <span class="icon">📖</span>
+                <span class="label">Prozessanleitungen</span>
+            </a>
+            <a href="#" class="action-card">
+                <span class="icon">📊</span>
+                <span class="label">SIA Modell</span>
+            </a>
+            <a href="#" class="action-card">
+                <span class="icon">🗂️</span>
+                <span class="label">bfiles Zugang</span>
+            </a>
+        </div>
+
+        <div class="main-content">
+            
+            <!-- Left Column: News Center -->
+            <div>
+                <h2 class="section-title">News Center</h2>
+                
+                <div class="news-grid">
+                    <!-- News Item 1 -->
+                    <div class="news-card">
+                        <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80');"></div>
+                        <div class="news-content">
+                            <span class="news-tag">Büro & Orga</span>
+                            <h3>Sommerfest Planung abgeschlossen. Bitte eintragen!</h3>
+                            <div class="news-date">Sabina S. • 15. Mai 2026</div>
+                        </div>
+                    </div>
+
+                    <!-- News Item 2 -->
+                    <div class="news-card">
+                        <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=600&q=80');"></div>
+                        <div class="news-content">
+                            <span class="news-tag">IT Support</span>
+                            <h3>Neues Update für Archicad am Wochenende</h3>
+                            <div class="news-date">IT Abteilung • 02. Mai 2026</div>
+                        </div>
+                    </div>
+
+                    <!-- News Item 3 -->
+                    <div class="news-card">
+                        <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&q=80');"></div>
+                        <div class="news-content">
+                            <span class="news-tag">Team</span>
+                            <h3>Wir begrüssen unser neues Teammitglied in der Bauleitung</h3>
+                            <div class="news-date">HR • 28. April 2026</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Top Resources -->
+            <div>
+                <h2 class="section-title">Top Ressourcen</h2>
+                
+                <div class="resource-section">
+                    
+                    <!-- Backoffice -->
+                    <div class="department-block">
+                        <div class="department-header">Backoffice & Orga</div>
+                        <div class="resource-grid">
+                            <a href="#" class="resource-tile">Brandings / Vorlagen</a>
+                            <a href="onenote:https://baustehli.sharepoint.com/sites/BAUS2/Freigegebene%20Dokumente/General/BAUS%20Bibel/02_Areas/01_Office/02_Büro.one" class="resource-tile">Parkplätze</a>
+                            <a href="#" class="resource-tile">Spesenreglement</a>
+                            <a href="onenote:https://baustehli.sharepoint.com/sites/BAUS2/Freigegebene%20Dokumente/General/BAUS%20Bibel/02_Areas/01_Office/02_Büro.one" class="resource-tile">Bürogeräte</a>
+                        </div>
+                    </div>
+
+                    <!-- Architektur -->
+                    <div class="department-block">
+                        <div class="department-header">Architektur</div>
+                        <div class="resource-grid">
+                            <a href="#" class="resource-tile tile-architektur">Archicad Standards</a>
+                            <a href="#" class="resource-tile tile-architektur">Renderings</a>
+                            <a href="#" class="resource-tile tile-architektur">Planerstellung</a>
+                            <a href="#" class="resource-tile tile-architektur">Wettbewerbe</a>
+                        </div>
+                    </div>
+
+                    <!-- Bauleitung -->
+                    <div class="department-block">
+                        <div class="department-header">Bauleitung</div>
+                        <div class="resource-grid">
+                            <a href="onenote:..\..\03_Resources\01_Programme\04_Baumanagement\03_SMINO.one#Journale&section-id={658FB858-BB17-457E-A297-9D07592766F2}&page-id={1D7D536C-80CD-48B2-A540-F5FBAF4310EC}&end&base-path=https://baustehli.sharepoint.com/sites/BAUS2/Freigegebene%20Dokumente/General/BAUS%20Bibel" class="resource-tile tile-bauleitung">SMINO</a>
+                            <a href="onenote:..\..\03_Resources\01_Programme\04_Baumanagement\01_Messerli.one#Baubeschrieb%20erstellen&section-id={FE9BACD8-A490-4E7D-A5DE-CE6284A81917}&page-id={166522E9-4057-47DD-9C3E-01D158E19D08}&end&base-path=https://baustehli.sharepoint.com/sites/BAUS2/Freigegebene%20Dokumente/General/BAUS%20Bibel" class="resource-tile tile-bauleitung">Messerli</a>
+                        </div>
+                    </div>
+
+                    <!-- Wissensbasen & Normen -->
+                    <div class="department-block">
+                        <div class="department-header">Wissen & Normen</div>
+                        <div class="resource-grid">
+                            <a href="#" class="resource-tile tile-wissen">Konstruktionsdetails</a>
+                            <a href="#" class="resource-tile tile-wissen">Referenzprojekte</a>
+                            <a href="onenote:..\..\01_Projects\01_BAUS%20lernt.one#BAUS%20managed%20SIA%20Normen&section-id={39C91682-B466-4DD2-8C3D-CC00BECC4C5F}&page-id={13F9A2BB-0BC5-47C3-9962-395FAD0D7E1D}&end&base-path=https://baustehli.sharepoint.com/sites/BAUS2/Freigegebene%20Dokumente/General/BAUS%20Bibel" class="resource-tile tile-wissen">SIA Normen</a>
+                            <a href="#" class="resource-tile tile-wissen">Brandschutz VKF</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+</body>
+</html>
