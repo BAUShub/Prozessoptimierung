@@ -304,7 +304,9 @@
         .modalContent {
             background: #ffffff;
             width: 90%;
-            max-width: 600px;
+            max-width: 800px;
+            max-height: 85vh;
+            overflow-y: auto;
             border-radius: 12px;
             padding: 30px;
             position: relative;
@@ -318,6 +320,7 @@
             cursor: pointer;
             color: #111143;
             transition: color 0.2s;
+            z-index: 10;
         }
         .modalClose:hover {
             color: #EC6A6D;
@@ -336,10 +339,66 @@
             margin-bottom: 25px;
             line-height: 1.5;
         }
+        
+        /* Styles für die Ausschreibungstreppe */
+        .staircase-wrapper {
+            margin: 30px 0;
+            padding: 20px;
+            background: #fdfaf8;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+        .staircase-step {
+            display: flex;
+            background: #ffffff;
+            border: 1px solid #6969d9;
+            margin-bottom: 12px;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(17,17,67,0.05);
+            transition: transform 0.2s;
+        }
+        .staircase-step:hover {
+            transform: translateX(5px);
+            border-color: #EC6A6D;
+        }
+        .staircase-step:hover .staircase-number {
+            background: #EC6A6D;
+        }
+        .staircase-number {
+            background: #6969d9;
+            color: #ffffff;
+            font-weight: 400;
+            font-size: 1.2em;
+            padding: 15px;
+            border-radius: 5px 0 0 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 60px;
+            transition: background 0.3s;
+        }
+        .staircase-content {
+            padding: 15px;
+            flex-grow: 1;
+        }
+        .staircase-content h4 {
+            margin: 0 0 5px 0;
+            color: #111143;
+            font-weight: 400;
+            font-size: 1.05em;
+        }
+        .staircase-content p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #4a4a68;
+            line-height: 1.4;
+        }
+
         .modalLinksTitle {
             font-weight: 400;
             color: #6969d9;
             margin-bottom: 10px;
+            margin-top: 25px;
             font-size: 0.9em;
             text-transform: uppercase;
         }
@@ -358,6 +417,12 @@
         .modalLink:hover {
             background: #6969d9;
             color: #ffffff;
+        }
+        
+        @media (max-width: 600px) {
+            .staircase-step {
+                margin-left: 0 !important;
+            }
         }
     </style>
 </head>
@@ -383,6 +448,9 @@
             <div class="modalClose" onclick="closeModal()">✕</div>
             <h2 class="modalTitle" id="modalTitle">Titel</h2>
             <div class="modalDescription" id="modalDescription">Beschreibung</div>
+            
+            <div id="modalCustomContent"></div>
+            
             <div id="modalLinksContainer"></div>
         </div>
     </div>
@@ -493,7 +561,22 @@
                             { titel: 'Submittentenliste erstellen', beschreibung: 'Auswahl der zur Offertstellung eingeladenen Unternehmungen.', links: [ { title: 'Submittentenliste', url: 'onenote:#Submittentenliste&section-id={29963475-BD9A-431B-B07C-629B7BB5DBCB}&page-id={95FE20AD-C0CC-43D6-8A79-657687019084}&end' } ] },
                             { titel: 'Terminplan revidieren', beschreibung: 'Anpassung und Überprüfung des Terminplans für die Ausführung.', links: [] },
                             { titel: 'LV erstellen', beschreibung: 'Erfassung aller notwendigen Arbeitsgattungen und Mengen im Leistungsverzeichnis.', links: [] },
-                            { titel: 'Ausschreibung versenden', beschreibung: 'Versand der vollständigen Unterlagen an die ausgewählten Unternehmer.', links: [ { title: 'Mailvorlage Ausschreibung', url: 'onenote:#Mailvorlage%20Ausschreibung&section-id={29963475-BD9A-431B-B07C-629B7BB5DBCB}&page-id={2A04A19D-D80F-4CE2-82BC-B97AEF12EE76}&end' } ] },
+                            { 
+                                titel: 'Ausschreibung versenden', 
+                                beschreibung: 'Die Ausschreibungsunterlagen werden gemäss der nachfolgenden Struktur zusammengestellt und an die ausgewählten Unternehmer versendet.',
+                                isAusschreibung: true,
+                                dokumente: [
+                                    { nr: 1, titel: 'Deckblatt', beschreibung: 'Individuell oder nach Vorgabe der Bauherrschaft.' },
+                                    { nr: 2, titel: 'Kostenzusammenstellung', beschreibung: 'Das Total der Summen entsprechend den verwendeten Gliederungen (z. B. nach NPK-Kapiteln). Diese Angaben sind für jede Ausschreibung neu zu erstellen. Gesamttotal und Mehrwertsteuer am Schluss ausweisen.' },
+                                    { nr: 3, titel: 'Bauherrengrundlagen', beschreibung: 'Text der vorgesehenen Vertragsurkunde, Allgemeine Bedingungen (z. B. AGB).' },
+                                    { nr: 4, titel: 'Besondere Bestimmungen', beschreibung: 'Diese fassen alle objektspezifischen Angaben zusammen und können mit dem NPK 102 «Besondere Bestimmungen» erstellt werden. Die Kostengrundlagen können mit dem NPK 103 «Kostengrundlagen» definiert werden.' },
+                                    { nr: 5, titel: 'Leistungsverzeichnis', beschreibung: 'NPK-Kapitel im jeweils aktuellen Versionsjahr.' },
+                                    { nr: 6, titel: 'Pläne', beschreibung: 'Zusammenstellen aller wichtigen Planinformationen zum Objekt wie Katasterplan, Situationsplan, Ausschreibungspläne.' },
+                                    { nr: 7, titel: 'Termine', beschreibung: 'Terminprogramm mit Meilensteinen, Baubeginn, Bauende oder Bauzeit der einzelnen Arbeitsgattungen, Bauprogramm.' },
+                                    { nr: 8, titel: 'Beilagen', beschreibung: 'Objektspezifische Vorgaben, z. B. Kontrollpläne, Bauphasenpläne, Schemaskizzen, Entsorgungskonzept, baustellenspezifische Massnahmen, Merkblätter.' }
+                                ],
+                                links: [ { title: 'Mailvorlage Ausschreibung', url: 'onenote:#Mailvorlage%20Ausschreibung&section-id={29963475-BD9A-431B-B07C-629B7BB5DBCB}&page-id={2A04A19D-D80F-4CE2-82BC-B97AEF12EE76}&end' } ] 
+                            },
                             { titel: 'KV revidieren', beschreibung: 'Überarbeitung und Bereinigung des Kostenvoranschlags basierend auf den detaillierten Ausschreibungsunterlagen.', links: [] },
                             { titel: 'Angebotsvergleich erstellen', beschreibung: 'Die eingegangenen Offerten werden bereinigt und verglichen.', links: [ { title: 'Kostenübersicht Angebote', url: 'https://baustehli.sharepoint.com/:x:/s/BAUS2/EeALi4ovfhBBt41KZEgRaHEB4482FcC-tgXR0mScU3UXTA?e=F2hoPD' } ] },
                             { titel: 'Vergabeantrag stellen', beschreibung: 'Formulierung der Vergabeempfehlung an die Bauherrschaft.', links: [] },
@@ -672,6 +755,32 @@
         function openModal(schritt) {
             document.getElementById('modalTitle').innerText = schritt.titel;
             document.getElementById('modalDescription').innerText = schritt.beschreibung;
+            
+            const customContent = document.getElementById('modalCustomContent');
+            customContent.innerHTML = '';
+            
+            if (schritt.isAusschreibung && schritt.dokumente) {
+                let html = `
+                    <div class="staircase-wrapper">
+                        <h3 style="color: #111143; font-weight: 300; margin-top: 0; margin-bottom: 20px;">Ausschreibungsunterlagen im Überblick</h3>
+                `;
+                
+                schritt.dokumente.forEach((doc, index) => {
+                    const indent = window.innerWidth > 600 ? index * 25 : 0;
+                    html += `
+                        <div class="staircase-step" style="margin-left: ${indent}px">
+                            <div class="staircase-number">${doc.nr}</div>
+                            <div class="staircase-content">
+                                <h4>${doc.titel}</h4>
+                                <p>${doc.beschreibung}</p>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                html += `</div>`;
+                customContent.innerHTML = html;
+            }
             
             const linksContainer = document.getElementById('modalLinksContainer');
             linksContainer.innerHTML = '';
