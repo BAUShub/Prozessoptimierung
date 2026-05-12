@@ -186,77 +186,6 @@
             font-weight: 300;
         }
         
-        .siaDetails {
-            margin-top: 25px;
-            background: #ffffff;
-            border-radius: 8px;
-            border: 1px solid #e0e0e0;
-            overflow: hidden;
-        }
-        .siaSummary {
-            font-weight: 300;
-            color: #111143;
-            background: #fafafa;
-            cursor: pointer;
-            padding: 15px;
-            outline: none;
-            user-select: none;
-            font-size: 1.05em;
-            border-bottom: 1px solid transparent;
-            transition: all 0.3s;
-        }
-        .siaDetails[open] .siaSummary {
-            border-bottom: 1px solid #e0e0e0;
-            color: #EC6A6D;
-        }
-        .siaSummary:hover {
-            background: #f0f0f0;
-        }
-        
-        table { 
-            width: 100%; 
-            border-collapse: collapse; 
-            margin-top: 0; 
-            font-size: 0.95em; 
-            font-weight: 200;
-        }
-        th, td { 
-            border: 1px solid #e0e0e0; 
-            padding: 12px; 
-            vertical-align: top; 
-        }
-        th { 
-            background: #111143; 
-            color: #fff0e9; 
-            text-align: left; 
-            font-weight: 300;
-        }
-        tr:nth-child(even) {
-            background-color: #fafafa;
-        }
-        .leistungsbereich { 
-            font-weight: 300; 
-            white-space: nowrap; 
-            color: #6969d9;
-        }
-        .modulTitle { 
-            font-weight: 300; 
-            margin-top: 15px; 
-            display: block; 
-            color: #EC6A6D;
-        }
-        .modulTitle:first-child { 
-            margin-top: 0; 
-        }
-        ul { 
-            margin: 8px 0; 
-            padding-left: 20px; 
-            list-style-type: square; 
-        }
-        li { 
-            margin-bottom: 4px; 
-        }
-        
         .placeholderText {
             text-align: center;
             color: #6969d9;
@@ -357,18 +286,6 @@
         .stepNode:hover .stepDot,
         .stepNode.active .stepDot {
             transform: scale(1.3);
-        }
-
-        .dokumenteBereich {
-            margin-top: 15px;
-            padding-top: 10px;
-            border-top: 1px solid #e0e0e0;
-        }
-        .dokumenteTitel {
-            font-weight: 300;
-            color: #EC6A6D;
-            margin-bottom: 5px;
-            display: block;
         }
 
         .modalOverlay {
@@ -478,14 +395,6 @@
                     {
                         id: '11', title: '11 Bedürfnisformulierung Lösungsstrategien',
                         ziele: 'Bedürfnisse, Ziele und Rahmenbedingungen definiert, Lösungsstrategie festgelegt',
-                        bereiche: [
-                            { name: '111 Organisation', ergebnisse: '<ul><li>Organisation des Planerteams</li><li>Aufgabenbeschrieb</li><li>PQM Konzept und Informationskonzept</li></ul>', auftraggeber: '<ul><li>Klären der übergeordneten Ziele und Rahmenbedingungen</li></ul>', planer: '<span class="modulTitle">111.1 Gesamtleitung</span><ul><li>Leistungen gemäss Seite 8</li></ul>' },
-                            { name: '112 Beschrieb und Visualisierung', ergebnisse: '<ul><li>Bericht Bedürfnisüberprüfung (Analyse der Bedürfnisse und Überprüfung der übergeordneten Ziele und Rahmenbedingungen)</li><li>Beschrieb</li><li>Skizzen</li><li>Pläne verschiedener Lösungsstrategien (inklusive deren Bewertung)</li></ul>', auftraggeber: '<ul><li>Aufarbeiten und zur Verfügung stellen von Unterlagen</li><li>Formulieren der Bedürfnisse sowie der Ziele und Rahmenbedingungen</li></ul><br><ul><li>Genehmigen des Berichts</li></ul><br><ul><li>Entscheid über die Bewertungskriterien und deren Gewichtung</li></ul>', planer: '<span class="modulTitle">112.1 Analyse</span><ul><li>Beschaffen der notwendigen Daten und Unterlagen</li><li>Überprüfen der übergeordneten Ziele und Rahmenbedingungen</li><li>Erstellen eines Berichts</li></ul><span class="modulTitle">112.2 Lösungsalternativen</span><ul><li>Erarbeiten von Bewertungskriterien und deren Gewichtung</li><li>Darstellen verschiedener Lösungsstrategien und deren Bewertung</li></ul>' },
-                            { name: '113 Kosten Finanzierung', ergebnisse: '<ul><li>Vergleich der Kosten und der Wirtschaftlichkeit der verschiedenen Lösungsstrategien</li></ul>', auftraggeber: '', planer: '<span class="modulTitle">113.1 Kosten</span><ul><li>Schätzen der Kosten und der Wirtschaftlichkeit der verschiedenen Lösungsstrategien</li></ul>' },
-                            { name: '114 Termine', ergebnisse: '<ul><li>Terminübersicht (Zeitbedarf für verschiedene Lösungsstrategien)</li></ul>', auftraggeber: '', planer: '<span class="modulTitle">114.1 Termine</span><ul><li>Schätzen des Zeitbedarfs für die verschiedenen Lösungsstrategien</li></ul>' },
-                            { name: '115 Administration', ergebnisse: '<ul><li>Dokumentation</li></ul>', auftraggeber: '', planer: '<span class="modulTitle">115.1 Dokumentation</span><ul><li>Zusammenstellen der Grundlagen, Ergebnisse und Entscheide</li></ul>' },
-                            { name: '116 Phasenabschluss', ergebnisse: '<ul><li>Zusammenfassende Beurteilung der Notwendigkeit</li><li>Dringlichkeit und Tragbarkeit einer baulichen oder anderen Lösung</li></ul>', auftraggeber: '<ul><li>Festlegen der Lösungsstrategie</li></ul>', planer: '' }
-                        ],
                         schritte: [
                             { titel: 'Übergreifende Rahmenbedingungen klären', beschreibung: 'Die generellen Rahmenbedingungen und Bedürfnisse der Problemstellung werden erfasst.', links: [] },
                             { titel: 'Ziele und Lösungsstrategie definieren', beschreibung: 'Definition der übergeordneten Ziele für das Projekt.', links: [] },
@@ -506,13 +415,6 @@
                     {
                         id: '21', title: '21 Projektdefinition Machbarkeitsstudie',
                         ziele: 'Vorgehen und Organisation festgelegt, Projektierungsgrundlagen definiert, Machbarkeit nachgewiesen',
-                        bereiche: [
-                            { name: '211 Organisation', ergebnisse: '<ul><li>Organisationsvarianten</li><li>Vorgehensvarianten</li></ul>', auftraggeber: '<ul><li>Entscheid betreffend Projektorganisation</li></ul>', planer: '<span class="modulTitle">211.1 Gesamtleitung</span><ul><li>Leistungen gemäss Seite 8</li></ul>' },
-                            { name: '212 Beschrieb und Visualisierung', ergebnisse: '<ul><li>Projektpflichtenheft mit Zielen und Rahmenbedingungen des Auftraggebers</li><li>Standortbezogene Rahmenbedingungen wie Raumplanungsvorschriften und Bauvorschriften</li><li>geologisches Gutachten</li><li>Bestandesaufnahmen</li><li>Zustandsanalysen und so weiter</li><li>Beschrieb</li><li>Skizzen</li><li>Pläne von Lösungsansätzen</li><li>Nachweis der baulichen, betrieblichen und rechtlichen Machbarkeit</li><li>Projektierungsgrundlagen</li></ul>', auftraggeber: '<ul><li>Genehmigen des Projektpflichtenhefts</li></ul><br><ul><li>Bestimmen des Lösungsansatzes</li></ul><br><ul><li>Genehmigen der Projektierungsgrundlagen</li></ul>', planer: '<span class="modulTitle">212.1 Ziele und Rahmenbedingungen des Auftraggebers</span><ul><li>Beschreiben der Projektanforderungen auf der Basis der Bedürfnisse sowie der Ziele und Rahmenbedingungen des Auftraggebers</li></ul><span class="modulTitle">212.2 Rahmenbedingungen des Standortes</span><ul><li>Abklären der standortbezogenen Rahmenbedingungen</li></ul><span class="modulTitle">212.3 Machbarkeitsstudie</span><ul><li>Überprüfen der Machbarkeit</li><li>Darstellen von planerischen und gestalterischen Lösungsansätzen</li><li>Abklären der Notwendigkeit und des Verfahrens für UVP</li></ul><span class="modulTitle">212.4 Projektierungsgrundlagen</span><ul><li>Beschreiben des gewählten Lösungsansatzes</li></ul>' },
-                            { name: '213 Kosten Finanzierung', ergebnisse: '<ul><li>Bericht Kostenermittlung (Kreditbedarf für Projektierung, Investitionskosten und Folgekosten)</li><li>Wirtschaftlichkeitsnachweis</li><li>Nachweis der Finanzierbarkeit</li></ul>', auftraggeber: '<ul><li>Festlegen des Kostenrahmens oder Kostendachs</li></ul>', planer: '<span class="modulTitle">213.1 Kosten</span><ul><li>Schätzen der Kosten</li><li>Überprüfen der Wirtschaftlichkeit und Finanzierbarkeit</li></ul>' },
-                            { name: '214 Termine', ergebnisse: '<ul><li>Entscheidungsorientierter Ablaufplan und Terminplan</li></ul>', auftraggeber: '<ul><li>Genehmigen des Ablaufplans und Terminplans</li></ul>', planer: '<span class="modulTitle">214.1 Termine</span><ul><li>Bestimmen der hauptsächlichen Abläufe und Ermitteln der voraussichtlichen Termine für die Projektierung und Realisierung des Vorhabens</li></ul>' },
-                            { name: '215 Administration', ergebnisse: '<ul><li>Projektdokumentation</li></ul>', auftraggeber: '<ul><li>Grundsatzentscheid Eintreten auf das Projekt</li></ul>', planer: '<span class="modulTitle">215.1 Dokumentation</span><ul><li>Zusammenstellen der Grundlagen, Ergebnisse und Entscheide</li></ul>' }
-                        ],
                         schritte: [
                             { titel: 'Bedürfnisse detailliert analysieren', beschreibung: 'Vertiefte Analyse der Projektanforderungen.', links: [ { title: 'Projektpflichtenheft Vorlagen', url: 'https://baustehli.sharepoint.com/:f:/r/sites/BAUS2/Freigegebene%20Dokumente/General/03_Resources/04_Templates/03_Architektur/00_Projektorganisation/02_Projektpflichtenheft?csf=1&web=1&e=tMHt5D' } ] },
                             { titel: 'Vorgehensvarianten festlegen', beschreibung: 'Die Aufbauorganisation und die Schnittstellen zum Besteller werden definiert.', links: [] },
@@ -527,14 +429,6 @@
                     {
                         id: '22', title: '22 Auswahlverfahren',
                         ziele: 'Anbieter Projekt ausgewählt, welche den Anforderungen am besten entsprechen',
-                        bereiche: [
-                            { name: '221 Organisation', ergebnisse: '<ul><li>Vorschlag für die Ausgestaltung des Auswahlverfahrens</li><li>Verzeichnis von geeigneten Personen im Beurteilungsgremium und von geeigneten Teilnehmern</li><li>geeignete Lokalitäten für Sitzungen und Ausstellung</li></ul>', auftraggeber: '<ul><li>Festlegen des Auswahlverfahrens</li><li>Einladen des Beurteilungsgremiums und Bestimmen des Teilnehmerfeldes</li></ul>', planer: '<span class="modulTitle">221.1 Gesamtleitung</span><ul><li>Erarbeiten eines Vorschlages für das bestgeeignete Auswahlverfahren</li><li>Erstellen eines Verzeichnisses mit kompetenten Fachleuten, die als Wettbewerbsteilnehmer oder Preisrichter Gewähr bieten für ein optimales Resultat</li><li>Mithilfe bei der Auswahl von kompetenten Fachleuten</li><li>Suchen und Mieten von geeigneten Lokalen für Sitzungen und für die Ausstellung der Wettbewerbsarbeiten</li><li>Bereitstellen der benötigten Büroinfrastruktur</li></ul>' },
-                            { name: '222 Beschrieb und Visualisierung', ergebnisse: '<ul><li>Programm mit allen benötigten Beilagen</li></ul>', auftraggeber: '<ul><li>Genehmigen des Programms und der Beilagen</li></ul>', planer: '<span class="modulTitle">222.1 Durchführung des Auswahlverfahrens</span><ul><li>Erstellen des Programms für das Auswahlverfahren und der dazugehörigen Beilagen wie Pläne, Modellunterlagen, Raumprogramm und so weiter</li><li>Durchführen der Vorprüfung inklusive Vorprüfungsbericht</li><li>Mitarbeit im Beurteilungsgremium</li></ul>' },
-                            { name: '223 Kosten Finanzierung', ergebnisse: '<ul><li>Kostenberechnung für die Durchführung des Auswahlverfahrens</li></ul>', auftraggeber: '<ul><li>Genehmigen der Kosten und Kreditfreigabe</li></ul>', planer: '<span class="modulTitle">223.1 Kosten des Auswahlverfahrens</span><ul><li>Berechnen der Kosten für die Abwicklung des Auswahlverfahrens, beinhaltend Preise und Ankäufe sowie Honorare und administrative Kosten</li></ul>' },
-                            { name: '224 Termine', ergebnisse: '<ul><li>Terminplan für die Durchführung des Auswahlverfahrens</li></ul>', auftraggeber: '<ul><li>Genehmigen der Termine</li></ul>', planer: '<span class="modulTitle">224.1 Termine des Auswahlverfahrens</span><ul><li>Erstellen eines Terminplans für die Abwicklung des Auswahlverfahrens</li></ul>' },
-                            { name: '225 Administration', ergebnisse: '<ul><li>Sitzungsprotokolle</li><li>Vorprüfungsbericht</li><li>Bericht des Beurteilungsgremiums</li><li>Pressemappe</li></ul>', auftraggeber: '', planer: '<span class="modulTitle">225.1 Administration des Auswahlverfahrens</span><ul><li>Administrative Unterstützung des Veranstalters</li></ul>' },
-                            { name: '226 Phasenabschluss', ergebnisse: '<ul><li>empfohlener Anbieter</li><li>empfohlenes Projekt</li></ul>', auftraggeber: '<ul><li>Festlegen des weiteren Vorgehens</li></ul>', planer: '' }
-                        ],
                         schritte: [
                             { titel: 'Auswahlverfahren festlegen', beschreibung: 'Die passenden Verfahrensregeln und das Beurteilungsgremium werden bestimmt.', links: [] },
                             { titel: 'Budget sicherstellen', beschreibung: 'Kreditfreigabe und Budgetierung für das Auswahlverfahren.', links: [] },
@@ -553,14 +447,6 @@
                     {
                         id: '31', title: '31 Vorprojekt',
                         ziele: 'Konzeption und Wirtschaftlichkeit optimiert',
-                        bereiche: [
-                            { name: '311 Organisation', ergebnisse: '<ul><li>Organisation des Planerteams für Phase 3</li><li>Aufgabenbeschrieb</li><li>PQM Konzept und Informationskonzept</li></ul>', auftraggeber: '<ul><li>Genehmigen der Projektorganisation sowie des PQM Konzeptes und Informationskonzeptes</li><li>Analysieren der Projektrisiken und Festlegen der QS Schwerpunkte</li></ul>', planer: '<span class="modulTitle">311.1 Gesamtleitung</span><ul><li>Leistungen gemäss Seite 8</li><li>Aufbau und Implementierung PQM</li></ul>' },
-                            { name: '312 Beschrieb und Visualisierung', ergebnisse: '<ul><li>vervollständigte Projektgrundlagen</li><li>Konzepte Landschaft</li><li>Raumplanung</li><li>Städtebau Architektur</li><li>räumliche Anordnung</li><li>Statik</li><li>Konstruktion</li><li>Nutzung und Betrieb</li><li>Sicherheit</li><li>Energie</li><li>Ökologie</li><li>Baustellenlogistik</li><li>Materialien Farben</li><li>Gebäudetechnik und so weiter</li><li>Skizzen von Zwischenschritten und Varianten</li><li>Pläne und Beschriebe</li><li>Modelle</li><li>Nutzungsplan</li><li>Gefährdungsbilder</li><li>Sicherheitsplan</li><li>Vorbericht Hauptbericht Umweltverträglichkeit</li><li>Nachweise</li><li>schriftliche Entscheide der Behörden über die Voranfragen und Pläne</li></ul>', auftraggeber: '<ul><li>Aufarbeiten und zur Verfügung stellen von Daten und Unterlagen</li></ul><br><ul><li>Entscheid über die Bewertungskriterien und deren Gewichtung</li><li>Beurteilen der formalen, funktionalen und qualitativen Aspekte</li></ul><br><ul><li>Genehmigen des Vorprojekts, Verfeinern der Ziele</li></ul>', planer: '<span class="modulTitle">312.1 Projektgrundlagen</span><ul><li>Beschaffen und Zusammenstellen ergänzender und aktualisierter Unterlagen</li></ul><span class="modulTitle">312.2 Projektkonzepte</span><ul><li>Erstellen der notwendigen Konzepte unter Berücksichtigung der Anforderungen im Projektpflichtenheft</li></ul><span class="modulTitle">312.3 Lösungsmöglichkeiten</span><ul><li>Erarbeiten von Bewertungskriterien und deren Gewichtung</li><li>Erarbeiten, Darstellen und Bewerten von Lösungsvarianten</li></ul><span class="modulTitle">312.4 Vorprojekt</span><ul><li>Integrales Umsetzen der Konzepte in ein Vorprojekt mit geeigneter Darstellung</li><li>Erstellen der notwendigen Dokumente, Berichte und Nachweise</li></ul><span class="modulTitle">312.5 Vorentscheide Detail Nutzungsplanung</span><ul><li>Zusammenstellen der für behördliche Vorentscheide und Detail Nutzungsplanverfahren (Gestaltungspläne und so weiter) notwendigen ergänzenden Unterlagen</li><li>Begleiten der Verfahren</li></ul>' },
-                            { name: '313 Kosten Finanzierung', ergebnisse: '<ul><li>Aufstellung der Investitionskosten und der Betriebskosten</li><li>Berechnung der Wirtschaftlichkeit</li><li>Kennzahlen</li></ul>', auftraggeber: '<ul><li>Vorgeben der Genauigkeit der Kostenermittlung</li><li>Genehmigen der Kosten, Verfeinern der Kostenziele</li></ul>', planer: '<span class="modulTitle">313.1 Kosten</span><ul><li>Ermitteln der voraussichtlichen Kosten und Wirtschaftlichkeit</li></ul>' },
-                            { name: '314 Termine', ergebnisse: '<ul><li>entscheidungsorientierter Ablaufplan und Terminplan</li></ul>', auftraggeber: '<ul><li>Genehmigen der Termine, Verfeinern der Terminziele</li></ul>', planer: '<span class="modulTitle">314.1 Termine</span><ul><li>Erstellen eines Ablaufplans und Terminplans mit den erforderlichen Arbeiten und Entscheiden</li></ul>' },
-                            { name: '315 Administration', ergebnisse: '<ul><li>Projektdokumentation</li></ul>', auftraggeber: '', planer: '<span class="modulTitle">315.1 Dokumentation</span><ul><li>Zusammenstellen der Grundlagen, Ergebnisse und Entscheide</li></ul>' },
-                            { name: '316 Abschluss', ergebnisse: '<ul><li>Vorprojekt</li></ul>', auftraggeber: '<ul><li>Entscheid über die weiterzuverfolgende Projektvariante unter Einbezug der Kriterien Klarheit, Tauglichkeit und Akzeptanz</li></ul>', planer: '' }
-                        ],
                         schritte: [
                             { titel: 'Grundlagen einfordern', beschreibung: 'Zusammenstellung aller bestehenden Dokumente und Grundlagen für den Start der Planung.', links: [ { title: 'Vollmacht Vorlage Word', url: 'https://baustehli.sharepoint.com/:w:/r/sites/BAUS2/Freigegebene%20Dokumente/General/02_Areas/04_Baumanagement/01_Grundlagen/01_Allgemein/01_Vollmacht/250625_BAUS_Vollmacht.dotx?d=wd78eac7599b147a0bb0370c802cf07bb&csf=1&web=1&e=CVRC7m' } ] },
                             { titel: 'Rahmenterminprogramm erstellen', beschreibung: 'Erstellung des initialen Zeitplans für das gesamte Projekt.', links: [ { title: 'Rahmenterminprogramm Anleitung', url: 'onenote:#Erstellung%20Rahmenterminprogramm&section-id={8AB1436D-AD8A-46BD-89E0-1B95BA438E9D}&page-id={29C0B71A-A00D-43EA-873E-3AB4FDE636CA}&end' } ] },
@@ -573,14 +459,6 @@
                     {
                         id: '32', title: '32 Bauprojekt',
                         ziele: 'Projekt und Kosten optimiert, Termine definiert',
-                        bereiche: [
-                            { name: '321 Organisation', ergebnisse: '', auftraggeber: '', planer: '<span class="modulTitle">321.1 Gesamtleitung</span><ul><li>Leistungen gemäss Seite 8</li></ul>' },
-                            { name: '322 Beschrieb und Visualisierung', ergebnisse: '<ul><li>vervollständigte Projektgrundlagen</li><li>Entscheidungsgrundlagen für die Auswahl der am besten geeigneten Ausführungsvariante</li><li>überarbeitete und ergänzte Konzepte</li><li>Pläne und Beschriebe</li><li>Modelle</li><li>Nachführung Nutzungsplan und Sicherheitsplan</li><li>Hauptbericht Umweltverträglichkeit</li><li>Nachführung Nachweise</li><li>Detailpläne</li></ul>', auftraggeber: '<ul><li>Aufarbeiten und zur Verfügung stellen von Daten und Unterlagen</li></ul><br><ul><li>Festlegen der Art und Zahl der Ausführungsvarianten, Entscheid über die Bewertungskriterien und deren Gewichtung, Beurteilen der formalen, funktionalen und qualitativen Aspekte</li></ul><br><ul><li>Genehmigen des Bauprojekts, Verfeinern der Ziele</li></ul>', planer: '<span class="modulTitle">322.1 Projektgrundlagen</span><ul><li>Beschaffen und Zusammenstellen ergänzender und aktualisierter Unterlagen</li></ul><span class="modulTitle">322.2 Ausführungsvarianten und deren Bewertung</span><ul><li>Erarbeiten von Bewertungskriterien und deren Gewichtung</li><li>Erarbeiten, Darstellen und Bewerten von Ausführungsvarianten</li></ul><span class="modulTitle">322.3 Bauprojekt</span><ul><li>Bereinigen der Konzepte</li><li>Erstellen des Bauprojektes mit den notwendigen Dokumenten, Berichten und Nachweisen</li><li>Detailpläne soweit für das Bauprojekt erforderlich</li></ul>' },
-                            { name: '323 Kosten Finanzierung', ergebnisse: '<ul><li>überarbeitete Kostenermittlung</li><li>Investitionskosten</li><li>Betriebskosten</li><li>Wirtschaftlichkeit und Kennzahlen</li><li>Detailstudien</li></ul>', auftraggeber: '<ul><li>Vorgeben der Genauigkeit der Kostenermittlung</li><li>Genehmigen der Kosten, Verfeinern der Kostenziele</li></ul>', planer: '<span class="modulTitle">323.1 Kosten</span><ul><li>Ermitteln der Kosten und Wirtschaftlichkeit</li><li>Detailstudien für die Kostenermittlung</li></ul>' },
-                            { name: '324 Termine', ergebnisse: '<ul><li>entscheidungsorientierter Ablaufplan und Terminplan</li></ul>', auftraggeber: '<ul><li>Genehmigen der Termine, Verfeinern der Terminziele</li></ul>', planer: '<span class="modulTitle">324.1 Termine</span><ul><li>Erstellen eines verfeinerten Ablaufplans und Terminplans mit den erforderlichen Arbeiten und Entscheiden</li></ul>' },
-                            { name: '325 Administration', ergebnisse: '<ul><li>Projektdokumentation</li></ul>', auftraggeber: '', planer: '<span class="modulTitle">325.1 Dokumentation</span><ul><li>Zusammenstellen der Grundlagen, Ergebnisse und Entscheide</li></ul>' },
-                            { name: '326 Abschluss', ergebnisse: '<ul><li>Bauprojekt</li></ul>', auftraggeber: '<ul><li>Grundsatzentscheid betreffend Umsetzung des Projekts</li></ul>', planer: '' }
-                        ],
                         schritte: [
                             { titel: 'Pläne und Modelle ausarbeiten', beschreibung: 'Detaillierung der Vorprojektpläne zu genauen Bauprojektplänen.', links: [] },
                             { titel: 'Baubeschrieb erstellen', beschreibung: 'Verfassen eines ausführlichen Baubeschriebs zur Materialisierung und Ausführung.', links: [] },
@@ -591,14 +469,6 @@
                     {
                         id: '33', title: '33 Bewilligungsverfahren / Auflageprojekt',
                         ziele: 'Projekt bewilligt, Kosten und Termine verifiziert, Baukredit genehmigt',
-                        bereiche: [
-                            { name: '331 Organisation', ergebnisse: '', auftraggeber: '', planer: '<span class="modulTitle">331.1 Gesamtleitung</span><ul><li>Leistungen gemäss Seite 8</li><li>Mitwirkung an Informationsanlässen</li><li>Einreichen des Bewilligungsgesuchs</li><li>Mitwirkung bei der Behandlung von Einsprachen, Verhandlungen mit Behörden</li></ul>' },
-                            { name: '332 Beschrieb und Visualisierung', ergebnisse: '<ul><li>Baueingabepläne und Auflagepläne</li><li>Bericht Umweltverträglichkeit</li><li>übrige Nachweise</li><li>Baugesuch</li><li>Baugespann</li><li>Gesuche für Spezialbewilligungen</li><li>Konzessionen und Landerwerb</li><li>bereinigtes Projekt</li></ul>', auftraggeber: '<ul><li>Genehmigen der Unterlagen und Mittel für die Baueingabe Auflage</li></ul><br><ul><li>Genehmigen der Unterlagen für Gesuche</li></ul>', planer: '<span class="modulTitle">332.1 Baugesuch</span><ul><li>Erstellen der Unterlagen und Organisation der Baugespanne für Baubewilligungsverfahren Auflage</li></ul><span class="modulTitle">332.2 Gesuche für Spezialbewilligungen, Konzessionen und Landerwerb</span><ul><li>Erstellen der Unterlagen für Spezialbewilligungen, Konzessionsgesuche und Gesuche um Landerwerb</li><li>Koordination der Bewilligungsverfahren und Erwerbsverfahren</li></ul><span class="modulTitle">332.3 Bereinigung des Bauprojekts</span><ul><li>Anpassen des Bauprojekts an behördliche Auflagen (keine grundsätzliche Überarbeitung)</li></ul>' },
-                            { name: '333 Kosten Finanzierung', ergebnisse: '<ul><li>bereinigte Kosten</li></ul>', auftraggeber: '', planer: '<span class="modulTitle">333.1 Bereinigung der Kosten</span><ul><li>Anpassen der Kosten als Folge behördlicher Auflagen</li></ul>' },
-                            { name: '334 Termine', ergebnisse: '<ul><li>bereinigter Ablaufplan und Terminplan</li></ul>', auftraggeber: '', planer: '<span class="modulTitle">334.1 Bereinigung der Termine</span><ul><li>Anpassen der Termine als Folge behördlicher Auflagen</li></ul>' },
-                            { name: '335 Administration', ergebnisse: '<ul><li>Projektdokumentation für Kreditgesuch</li><li>Projektdokumentation</li></ul>', auftraggeber: '', planer: '<span class="modulTitle">335.1 Dokumentation</span><ul><li>Zusammenstellen der Projektdokumentation für das Kreditgesuch</li><li>Zusammenstellen der Grundlagen, Ergebnisse und Entscheide</li></ul>' },
-                            { name: '336 Phasenabschluss', ergebnisse: '<ul><li>rechtskräftig bewilligtes Projekt</li></ul>', auftraggeber: '<ul><li>Festlegen des weiteren Vorgehens</li></ul>', planer: '' }
-                        ],
                         schritte: [
                             { titel: 'Baugesuchspläne erstellen', beschreibung: 'Zusammenstellung aller für die Behörden erforderlichen Dokumente.', links: [ { title: 'eBaugesuch Merkblätter', url: 'onenote:#01_eBaugesuch%20Merkblätter&section-id={8AB1436D-AD8A-46BD-89E0-1B95BA438E9D}&page-id={62B2F9C8-AAA5-4DF2-971B-1ABD5EE7CD5E}&end' }, { title: 'Formulare Stadt Zürich', url: 'https://www.stadt-zuerich.ch/de/planen-und-bauen/baubewilligungen/formulare-merkblaetter.html' } ] },
                             { titel: 'Baustelleninstallationsplan erstellen', beschreibung: 'Konzeption der Logistik und Installationen auf der Baustelle.', links: [] },
@@ -616,13 +486,6 @@
                     {
                         id: '41', title: '41 Ausschreibung Offertvergleich Vergabeantrag',
                         ziele: 'Vergabereife erreicht und Werkverträge abgeschlossen',
-                        bereiche: [
-                            { name: '411 Organisation', ergebnisse: '<ul><li>Kriterien definiert</li><li>Submissionsprogramm</li><li>Submittentenliste</li></ul>', auftraggeber: '<ul><li>Festlegen des Verfahrens und der Kriterien</li><li>Bestimmen der einzuladenden Unternehmungen</li></ul>', planer: '<span class="modulTitle">411.1 Gesamtleitung</span><ul><li>Vorschlagen der Kriterien</li><li>Erstellen des Submissionsprogramms und der Submittentenliste</li></ul>' },
-                            { name: '412 Beschrieb und Visualisierung', ergebnisse: '<ul><li>Ausschreibungspläne und Beschrieb</li><li>Leistungsverzeichnis (LV)</li></ul>', auftraggeber: '<ul><li>Genehmigen der Ausschreibungsunterlagen</li></ul>', planer: '<span class="modulTitle">412.1 Erstellen der Ausschreibungsunterlagen</span><ul><li>Erstellen der Pläne Beschriebe und Leistungsverzeichnisse</li></ul>' },
-                            { name: '413 Kosten Finanzierung', ergebnisse: '<ul><li>Kostenvoranschlag (KV)</li><li>Angebotsvergleich</li></ul>', auftraggeber: '<ul><li>Genehmigen der revidierten Kosten</li></ul>', planer: '<span class="modulTitle">413.1 Kosten</span><ul><li>Erstellen des Kostenvoranschlags</li><li>Erstellen des Angebotsvergleichs</li></ul>' },
-                            { name: '414 Termine', ergebnisse: '<ul><li>Terminplan Ausführung</li></ul>', auftraggeber: '<ul><li>Genehmigen des Terminplans</li></ul>', planer: '<span class="modulTitle">414.1 Termine</span><ul><li>Nachführen des Terminplans für die Ausführung</li></ul>' },
-                            { name: '415 Administration', ergebnisse: '<ul><li>Ausschreibung versendet</li><li>Vergabeantrag</li><li>Werkvertrag oder Auftragsbestätigung</li></ul>', auftraggeber: '<ul><li>Definitiver Entscheid über die Vergaben</li><li>Unterzeichnen der Werkverträge</li></ul>', planer: '<span class="modulTitle">415.1 Administration der Ausschreibung</span><ul><li>Versenden der Ausschreibung</li><li>Erstellen des Vergabeantrags</li><li>Vorbereiten der Werkverträge oder Auftragsbestätigungen</li></ul>' }
-                        ],
                         schritte: [
                             { titel: 'Kriterien definieren', beschreibung: 'Festlegen der Eignungs- und Zuschlagskriterien für die Unternehmungen.', links: [ { title: 'Vergabeverfahren Zuschlagskriterien', url: 'onenote:#Vergabeverfahren%20%20Zuschlagkriterien&section-id={29963475-BD9A-431B-B07C-629B7BB5DBCB}&page-id={8438A0FD-C65A-447B-A3E6-F6B099347307}&end' } ] },
                             { titel: 'Ausschreibungspläne ausarbeiten', beschreibung: 'Zusammenstellung der detaillierten Unterlagen für die Unternehmer.', links: [ { title: 'Ausschreibungsunterlagen', url: 'onenote:#Ausschreibungsunterlagen%20zusammenstellen&section-id={29963475-BD9A-431B-B07C-629B7BB5DBCB}&page-id={EAC203C2-2449-4D43-B26F-08712394D5E4}&end' } ] },
@@ -645,13 +508,6 @@
                     {
                         id: '51', title: '51 Ausführungsprojekt',
                         ziele: 'Ausführungsreife erreicht',
-                        bereiche: [
-                            { name: '511 Organisation', ergebnisse: '<ul><li>Organisation Planerteam</li><li>Aufgabenbeschrieb</li><li>PQM Konzept</li></ul>', auftraggeber: '<ul><li>Bewerten der Projektrisiken und Festlegen der QS Schwerpunkte</li><li>Genehmigen der Projektorganisation und des PQM Konzepts</li></ul>', planer: '<span class="modulTitle">511.1 Gesamtleitung</span><ul><li>Leistungen gemäss Seite 8</li><li>Analysieren der Projektrisiken</li><li>Aufbau und Implementierung PQM</li></ul>' },
-                            { name: '512 Beschrieb und Visualisierung', ergebnisse: '<ul><li>vervollständigte Projektgrundlagen</li><li>Ausführungspläne und Detailpläne</li><li>Verzeichnis der Projektänderungen</li><li>Modelle</li><li>Muster</li><li>Provisorische Dokumentation für die Bauwerksbewirtschaftung</li><li>Grundbucheinträge</li></ul>', auftraggeber: '<ul><li>Aufarbeiten und zur Verfügung stellen von Daten und Unterlagen</li></ul><br><ul><li>Genehmigen der Ausführungspläne und Detailpläne und der Projektänderungen</li></ul><br><ul><li>Abschluss des Erwerbs von Grund und Rechten</li></ul>', planer: '<span class="modulTitle">512.1 Projektgrundlagen</span><ul><li>Beschaffen und Zusammenstellen ergänzender und aktualisierter Unterlagen</li></ul><span class="modulTitle">512.2 Ausführungsunterlagen</span><ul><li>Erstellen der diversen Ausführungsunterlagen</li></ul><span class="modulTitle">512.3 Dokumente für die Bauwerksbewirtschaftung</span><ul><li>Erstellen von provisorischen Überwachungsplänen und Massnahmenplänen</li></ul><span class="modulTitle">512.4 Landerwerb</span><ul><li>Mitwirkung beim Vollzug des Erwerbs von Grund und Rechten</li></ul>' },
-                            { name: '513 Kosten Finanzierung', ergebnisse: '<ul><li>Zahlungspläne</li></ul>', auftraggeber: '<ul><li>Genehmigen der Zahlungspläne</li><li>Freigeben des Baukredits</li></ul>', planer: '<span class="modulTitle">513.1 Kosten</span><ul><li>Aufstellen des generellen Zahlungsplans</li></ul>' },
-                            { name: '514 Termine', ergebnisse: '<ul><li>definitiver Ablaufplan und Terminplan</li></ul>', auftraggeber: '<ul><li>Genehmigen des Ablaufplans und Terminplans</li></ul>', planer: '<span class="modulTitle">514.1 Termine</span><ul><li>Erstellen des definitiven Ablaufplans und Terminplans</li></ul>' },
-                            { name: '515 Administration', ergebnisse: '<ul><li>Werkverträge und Kaufverträge</li><li>aufbereitete Informationen</li><li>Projektdokumentation</li></ul>', auftraggeber: '<ul><li>Abschliessen der Werkverträge und Kaufverträge</li></ul>', planer: '<span class="modulTitle">515.1 Verträge und Dokumentation</span><ul><li>Vorbereiten der Werkverträge</li><li>Zusammenstellen der Grundlagen, Ergebnisse und Entscheide</li></ul>' }
-                        ],
                         schritte: [
                             { titel: 'Ausführungspläne erstellen', beschreibung: 'Die Pläne werden für die Bauausführung im Detail gezeichnet.', links: [] },
                             { titel: 'Massaufnahme koordinieren', beschreibung: 'Aufnahme der realen Masse auf der Baustelle für die Werkplanung.', links: [] },
@@ -663,13 +519,6 @@
                     {
                         id: '52', title: '52 Ausführung',
                         ziele: 'Bauwerk gemäss Pflichtenheft und Vertrag erstellt',
-                        bereiche: [
-                            { name: '521 Organisation', ergebnisse: '<ul><li>Ausführungsorganisation</li><li>Standardablauf des Änderungswesens</li><li>QS Plan und QS Dokumente</li></ul>', auftraggeber: '<ul><li>Genehmigen der Organisation, des Änderungswesens und des QS Plans</li></ul>', planer: '<span class="modulTitle">521.1 Gesamtleitung</span><ul><li>Leistungen gemäss Seite 8</li><li>Organisieren des Änderungswesens</li></ul>' },
-                            { name: '522 Beschrieb und Visualisierung', ergebnisse: '<ul><li>vervollständigte Projektgrundlagen</li><li>Standberichte</li><li>Regierapporte</li><li>Ausmassurkunden</li><li>Prüfungsprotokolle</li><li>Protokolle der Abnahmeprüfungen</li><li>Mängellisten</li><li>Projektänderungsdokumente</li><li>nachgeführte Pläne</li><li>Umsetzung des definitiv genehmigten architektonischen und gestalterischen Konzeptes</li></ul>', auftraggeber: '<ul><li>Genehmigen der Standberichte</li><li>Abnahme von Teilen des Bauwerks</li></ul><br><ul><li>Genehmigen von Projektänderungen und Ausführungsänderungen</li></ul>', planer: '<span class="modulTitle">522.1 Projektgrundlagen</span><ul><li>Beschaffen und Zusammenstellen ergänzender und aktualisierter Unterlagen</li></ul><span class="modulTitle">522.2 Bauleitung</span><ul><li>Leiten der Bauausführung</li><li>periodisches Erstellen von Berichten</li><li>Qualitätsprüfungen</li><li>Überwachen der Einhaltung von Auflagen</li></ul><span class="modulTitle">522.3 Projektänderungen</span><ul><li>Ändern der Ausführungsunterlagen</li><li>Nachführen der Ausführungsunterlagen an Abweichungen der Bauausführung</li></ul><span class="modulTitle">522.4 Gestalterische Leitung</span><ul><li>Festlegen der in den Ausführungsunterlagen nicht festgelegten Gestaltungselemente</li><li>Begleiten während der Bauausführung</li></ul>' },
-                            { name: '523 Kosten Finanzierung', ergebnisse: '<ul><li>Finanzrapporte mit Endkostenprognose</li><li>kontrollierte Rechnungen</li><li>Zahlungsanweisungen</li><li>Sicherheiten (Solidarbürgschaften, Garantien)</li></ul>', auftraggeber: '<ul><li>Genehmigen von Mehrkosten und Minderkosten</li></ul>', planer: '<span class="modulTitle">523.1 Kosten</span><ul><li>Führen der Baubuchhaltung</li><li>Führen des Zahlungswesens</li><li>Beschaffen von finanziellen Sicherheiten</li><li>Rapportierung</li></ul>' },
-                            { name: '524 Termine', ergebnisse: '<ul><li>nachgeführter Ablaufplan und Terminplan mit Terminprognose</li></ul>', auftraggeber: '<ul><li>Genehmigen von Terminänderungen</li></ul>', planer: '<span class="modulTitle">524.1 Termine</span><ul><li>Periodisches Nachführen des Ablaufplans und Terminplans mit Terminprognose</li></ul>' },
-                            { name: '525 Administration', ergebnisse: '<ul><li>aufbereitete Informationen</li><li>Projektdokumentation</li></ul>', auftraggeber: '', planer: '<span class="modulTitle">525.1 Dokumentation</span><ul><li>Protokollieren der Sitzungen mit dem Auftraggeber</li><li>Zusammenstellen der Grundlagen, Ergebnisse und Entscheide</li></ul>' }
-                        ],
                         schritte: [
                             { titel: 'Baujournal führen', beschreibung: 'Laufende Dokumentation des Baufortschritts und der Vorkommnisse.', links: [ { title: 'Baujournal erstellen', url: 'onenote:#Erstellung%20Baujournal&section-id={2CA35A89-E823-407C-83EA-50F8E412BA2E}&page-id={2D01E95C-69FA-4A20-B1D3-14A646C79F58}&end' } ] },
                             { titel: 'Qualitätssicherung durchführen', beschreibung: 'Regelmässige Kontrollen der Arbeiten auf der Baustelle.', links: [ { title: 'Arbeitssicherheit', url: 'onenote:#Vorgehen%20Arbeitssicherheit&section-id={2CA35A89-E823-407C-83EA-50F8E412BA2E}&page-id={71494E0B-904C-4DC0-95F1-29B7EEE89700}&end' }, { title: 'Qualitätssicherung Rundgang', url: 'onenote:#Rundgang%20Qualitätssicherung&section-id={2CA35A89-E823-407C-83EA-50F8E412BA2E}&page-id={42EE37C0-5048-44B9-B472-343E699AB1BE}&end' } ] },
@@ -681,14 +530,6 @@
                     {
                         id: '53', title: '53 Inbetriebnahme Abschluss',
                         ziele: 'Bauwerk übernommen und in Betrieb genommen, Schlussabrechnung abgenommen',
-                        bereiche: [
-                            { name: '531 Organisation', ergebnisse: '', auftraggeber: '<ul><li>Festlegen der Organisation für Inbetriebnahme, Übergabe und Bewirtschaftung</li></ul>', planer: '<span class="modulTitle">531.1 Gesamtleitung</span><ul><li>Leistungen gemäss Seite 8</li><li>Übergeben des Bauwerks an den Auftraggeber</li><li>Organisieren der Ausbildung des Betriebspersonals</li></ul>' },
-                            { name: '532 Beschrieb und Visualisierung', ergebnisse: '<ul><li>Resultate von Kontrollmessungen</li><li>Protokolle von Betriebstests und Abnahmeprüfungen</li><li>Mängellisten</li><li>Bauwerksakten mit vollständiger Dokumentation für die Bauwerksbewirtschaftung (gemäss Normen SIA 469 und 162 5)</li><li>Nachweis der Mängelbehebung</li></ul>', auftraggeber: '<ul><li>Genehmigen der Betriebsbereitschaft</li><li>Abnahme des Bauwerks</li></ul><br><ul><li>Genehmigen und Übernehmen der Bauwerksakten</li></ul><br><ul><li>Genehmigen der Mängelbehebung</li></ul>', planer: '<span class="modulTitle">532.1 Inbetriebnahme</span><ul><li>Planen, Organisieren und Durchführen der Inbetriebnahme von Anlagen, Installationen und Bauteilen inklusive integrierte Tests</li></ul><span class="modulTitle">532.2 Bauwerksakten</span><ul><li>abschliessendes Nachführen der Projektänderungen</li><li>Zusammenstellen einer vollständigen Dokumentation des Bauwerks</li></ul><span class="modulTitle">532.3 Mängelbehebung</span><ul><li>Leiten der Mängelbehebung</li></ul>' },
-                            { name: '533 Kosten Finanzierung', ergebnisse: '<ul><li>Sicherheiten (Solidarbürgschaften, Garantien)</li><li>provisorische Schlussabrechnung (nach Bedarf)</li><li>Schlussabrechnung</li></ul>', auftraggeber: '<ul><li>Genehmigen der Schlussabrechnung</li></ul>', planer: '<span class="modulTitle">533.1 Kosten</span><ul><li>abschliessendes Beschaffen der finanziellen Sicherheiten</li><li>Erstellen der Schlussabrechnung</li></ul>' },
-                            { name: '534 Termine', ergebnisse: '<ul><li>Inbetriebnahmeprogramm</li><li>Terminplan für die Mängelbehebung (mit Verfalldaten)</li></ul>', auftraggeber: '<ul><li>Genehmigen des Inbetriebnahmeprogramms</li></ul>', planer: '<span class="modulTitle">534.1 Termine</span><ul><li>Erstellen des Inbetriebnahmeprogramms</li><li>Erstellen des Terminplans für die Mängelbehebung</li></ul>' },
-                            { name: '535 Administration', ergebnisse: '<ul><li>Projektdokumentation</li></ul>', auftraggeber: '', planer: '<span class="modulTitle">535.1 Dokumentation</span><ul><li>Zusammenstellen der Grundlagen, Ergebnisse und Entscheide</li></ul>' },
-                            { name: '536 Phasenabschluss', ergebnisse: '', auftraggeber: '<ul><li>Inbetriebnahme des gebrauchstauglichen und mängelfreien Bauwerks</li></ul>', planer: '' }
-                        ],
                         schritte: [
                             { titel: 'Inbetriebnahme koordinieren', beschreibung: 'Organisation der Inbetriebnahme sämtlicher technischer Anlagen.', links: [] },
                             { titel: 'Bezugsabnahme durchführen', beschreibung: 'Die Abnahme vor dem effektiven Einzug der Nutzer.', links: [] },
@@ -707,13 +548,6 @@
                     {
                         id: '61', title: '61 Betrieb',
                         ziele: 'Betrieb sichergestellt und optimiert',
-                        bereiche: [
-                            { name: '611 Organisation', ergebnisse: '<ul><li>Betriebshandbuch mit Organigramm</li><li>Pflichtenheften und Aufgabenbeschrieben</li><li>Einsatzpläne</li><li>Ressourcenplan</li></ul>', auftraggeber: '<ul><li>Genehmigen der Organisation</li></ul>', planer: '<span class="modulTitle">611.1 Gesamtleitung</span><ul><li>Leistungen gemäss Seite 8</li><li>Erarbeiten von Einsatzplänen (inklusive Pikettorganisation)</li><li>Organisieren der Versorgung (Energie, Kommunikationsmittel und so weiter)</li></ul>' },
-                            { name: '612 Beschrieb und Visualisierung', ergebnisse: '<ul><li>Störungsstatistik</li><li>Revisionsberichte</li><li>Wartungsjournale</li><li>Messresultate</li><li>Energiestatistik</li><li>Nachweise der Erfüllung der Vorgaben</li><li>Nachweise von Optimierungspotenzialen</li><li>nachgeführte Bauwerksakten</li><li>Leistungsbeschriebe</li><li>Vertragsmanagement</li><li>Belegungsplanung</li><li>Definition Schnittstellen zum Mietrecht</li></ul>', auftraggeber: '<ul><li>Genehmigen von Prüfkriterien, Messkonzepten und Massnahmen</li></ul>', planer: '<span class="modulTitle">612.1 Massnahmen für die Sicherstellung und Optimierung des Betriebs</span><ul><li>Erstellen der erforderlichen Unterlagen</li><li>Betreuen des Vertragswesens</li></ul>' },
-                            { name: '613 Kosten Finanzierung', ergebnisse: '<ul><li>Kennzahlen</li><li>Schnittstellen zur Geschäftsbuchhaltung</li><li>Jahresbudget</li><li>Mehrjahresplan</li><li>Abrechnung</li><li>Verrechnung</li></ul>', auftraggeber: '<ul><li>Genehmigen von Budgets und Abrechnung</li><li>Finanzvorgaben, Controlling</li></ul>', planer: '<span class="modulTitle">613.1 Kosten der Massnahmen</span><ul><li>Erstellen der erforderlichen Unterlagen</li></ul>' },
-                            { name: '614 Termine', ergebnisse: '<ul><li>Terminpläne</li><li>Verfalldaten</li></ul>', auftraggeber: '<ul><li>Genehmigen der Termine</li></ul>', planer: '<span class="modulTitle">614.1 Termine der Massnahmen</span><ul><li>Planen der Termine für die Durchführung von Massnahmen</li></ul>' },
-                            { name: '615 Administration', ergebnisse: '<ul><li>Wartungsverträge und Serviceverträge</li><li>Dokumentation</li></ul>', auftraggeber: '<ul><li>Genehmigen der Verträge</li></ul>', planer: '<span class="modulTitle">615.1 Verträge und Dokumentation</span><ul><li>Ausarbeiten von Wartungsverträgen und Serviceverträgen</li><li>Zusammenstellen der Grundlagen, Ergebnisse und Entscheide</li></ul>' }
-                        ],
                         schritte: [
                             { titel: 'Betriebshandbuch erstellen', beschreibung: 'Dokumentation der Prozesse für die optimale Nutzung des Gebäudes.', links: [] },
                             { titel: 'Einsatzpläne ausarbeiten', beschreibung: 'Planung der personellen Ressourcen für den Betrieb.', links: [] },
@@ -727,13 +561,6 @@
                     {
                         id: '62', title: '62 Erhaltung',
                         ziele: 'Gebrauchstauglichkeit und Wert des Bauwerks für definierten Zeitraum aufrechterhalten',
-                        bereiche: [
-                            { name: '621 Organisation', ergebnisse: '<ul><li>Organigramm</li><li>Pflichtenhefte und Aufgabenbeschriebe</li><li>Überwachungsplan</li></ul>', auftraggeber: '<ul><li>Genehmigen der Organisation und des Überwachungsplans</li></ul>', planer: '<span class="modulTitle">621.1 Gesamtleitung</span><ul><li>Leistungen gemäss Seite 8</li><li>Erarbeiten eines Erhaltungsplans</li><li>Erarbeiten eines Überwachungsplans</li></ul>' },
-                            { name: '622 Beschrieb und Visualisierung', ergebnisse: '<ul><li>Inspektionsberichte</li><li>Pläne und Beschriebe der vorgesehenen Massnahmen</li><li>nachgeführte Bauwerksakten (Pläne, Kenndaten, Objektgeschichte, Unternehmerverzeichnis und so weiter) gemäss Normen SIA 469 und 162 5</li></ul>', auftraggeber: '<ul><li>Genehmigen der Prüfkriterien und Massnahmen</li></ul>', planer: '<span class="modulTitle">622.1 Massnahmen für die Erhaltung</span><ul><li>Durchführen der Inspektionen und Kontrollen gemäss Überwachungsplan</li><li>Erstellen eines Massnahmenplans (Beschriebe und Pläne)</li><li>Nachführen der Bauwerksakten</li></ul>' },
-                            { name: '623 Kosten Finanzierung', ergebnisse: '<ul><li>Jahresbudget</li><li>Mehrjahresplan</li><li>Abrechnung</li><li>Verrechnung</li><li>Kennzahlen</li></ul>', auftraggeber: '<ul><li>Genehmigen der Budgets und der Abrechnung</li><li>Finanzvorgaben, Controlling</li></ul>', planer: '<span class="modulTitle">623.1 Kosten der Massnahmen</span><ul><li>Erstellen von Mehrjahresplänen und Jahresbudgets für die geplanten Massnahmen</li><li>Erstellen der Abrechnungen von durchgeführten Massnahmen</li></ul>' },
-                            { name: '624 Termine', ergebnisse: '<ul><li>Terminpläne</li></ul>', auftraggeber: '<ul><li>Genehmigen der Termine</li></ul>', planer: '<span class="modulTitle">624.1 Termine der Massnahmen</span><ul><li>Planen der Termine für die Durchführung von Massnahmen</li></ul>' },
-                            { name: '625 Administration', ergebnisse: '<ul><li>Protokolle</li><li>Statistiken</li><li>Dokumentation</li></ul>', auftraggeber: '', planer: '<span class="modulTitle">625.1 Dokumentation</span><ul><li>Zusammenstellen der Grundlagen, Ergebnisse und Entscheide</li></ul>' }
-                        ],
                         schritte: [
                             { titel: 'Erhaltungsplan erarbeiten', beschreibung: 'Langfristige Planung zur Sicherung der Bausubstanz.', links: [] },
                             { titel: 'Inspektionen durchführen', beschreibung: 'Zustandskontrolle gemäss Überwachungsplan.', links: [] },
@@ -837,28 +664,6 @@
                 });
                 html += `   </div>
                          </div>`;
-            }
-
-            if (tp.bereiche && tp.bereiche.length > 0) {
-                html += `<details class="siaDetails">
-                            <summary class="siaSummary">Detaillierte SIA Anforderungen einblenden</summary>
-                            <table>
-                                <tr>
-                                    <th>Leistungsbereiche</th>
-                                    <th>Erwartete Ergebnisse und Dokumente</th>
-                                    <th>Leistungen und Entscheide des Auftraggebers</th>
-                                    <th>Leistungen der Planer (mögliche Modulinhalte)</th>
-                                </tr>`;
-                tp.bereiche.forEach(b => {
-                    html += `<tr>
-                                <td class="leistungsbereich">${b.name}</td>
-                                <td>${b.ergebnisse || ''}</td>
-                                <td>${b.auftraggeber || ''}</td>
-                                <td>${b.planer || ''}</td>
-                             </tr>`;
-                });
-                html += `   </table>
-                         </details>`;
             }
             
             detailsContainer.innerHTML = html;
